@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Cine</title>
+</head>
+<body>
+    <h1>Detalle de Cine</h1>
+
+    <h2>{{ cine.nombre_cine }}</h2>
+    <p><strong>Dirección:</strong> {{ cine.direccion }}</p>
+    <strong>Provincia:</strong> 
+    <a href="{% url 'detalle_provincia' cine.provincia.id_provincia %}">{{ cine.provincia.nombre_provincia }}</a>
+
+    <h3>Salas disponibles:</h3>
+    <ul>
+        {% for sala in cine.salas.all %}
+            <li>{{ sala.numero_sala }} (Capacidad: {{ sala.capacidad }})</li>
+        {% empty %}
+            <li>No hay salas disponibles para este cine.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'listado_cines' %}">Volver a la lista de cines</a>
+</body>
+</html>
