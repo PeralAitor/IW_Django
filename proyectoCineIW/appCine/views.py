@@ -4,7 +4,7 @@ from .models import Provincia, Cine, Sala
 # Create your views here.
 
 #Vista de lista de provincias.
-def listado_provincias(request):
+def lista_provincias(request):
     provincias = Provincia.objects.order_by("id_provincia")
     contexto = {'lista_provincias': provincias}
     return render(request, 'lista_provincias.html', contexto)
@@ -16,7 +16,7 @@ def detalle_provincia(request, id_provincia):
     return render(request, 'detalle_provincia.html', context)
 
 #Vista de lista de cines.
-def listado_cines(request):
+def lista_cines(request):
     cines = Cine.objects.order_by("id_cine")
     contexto = {'lista_cines': cines}
     return render(request, 'lista_cines.html', contexto)
@@ -27,7 +27,7 @@ def detalle_cine(request, id_cine):
     return render(request, 'detalle_cine.html', contexto)
 
 #Vista de lista de salas.
-def listado_salas(request):
+def lista_salas(request):
     salas = Sala.objects.order_by("id_sala")
     contexto = {'lista_salas': salas}
     return render(request, 'lista_salas.html', contexto)
