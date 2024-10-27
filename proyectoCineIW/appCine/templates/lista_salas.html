@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Salas</title>
+</head>
+<body>
+<h1>Lista de Salas</h1>
+<ul>
+    {% for sala in lista_salas %}
+        <li>
+            <a href="{% url 'detalle_sala' sala.id_sala %}">
+                {{ sala.numero_sala }} - {{ sala.cine.nombre_cine }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'listado_cines' %}">Volver a la lista de cines</a>
+</body>
+</html>

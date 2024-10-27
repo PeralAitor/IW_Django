@@ -27,10 +27,13 @@ def detalle_cine(request, id_cine):
     return render(request, 'detalle_cine.html', contexto)
 
 #Vista de lista de salas.
-def listadoSalas(request):
+def listado_salas(request):
     salas = Sala.objects.order_by("id_sala")
-    texto_salas = ""
-    for sala in salas:
-        texto_salas += sala.numero_sala + " - " + sala.cine.nombre_cine + ","
-    return HttpResponse(texto_salas)
-    
+    contexto = {'lista_salas': salas}
+    return render(request, 'lista_salas.html', contexto)
+
+
+def detalle_sala(request, id_sala):
+    salas = get_object_or_404(Sala, id_sala=id_sala)
+    contexto = {'sala': salas}
+    return render(request, 'detalle_sala.html', contexto)

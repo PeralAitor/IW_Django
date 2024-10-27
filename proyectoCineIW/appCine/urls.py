@@ -15,5 +15,7 @@ urlpatterns = [
     path('detalle_cine/<int:id_cine>/', views.detalle_cine, name='detalle_cine'),
 
     #Url para el listado de sals, con su correspondiente vista.
-    path('listadoSalas/', views.listadoSalas, name='listadoSalas'),
+    path('listado_salas/', views.listado_salas, name='listado_salas'),
+
+    path('detalle_sala/<int:id_sala>/', views.detalle_sala, name='detalle_sala'),
 ]

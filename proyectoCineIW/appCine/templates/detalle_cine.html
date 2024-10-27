@@ -16,7 +16,12 @@
     <h3>Salas disponibles:</h3>
     <ul>
         {% for sala in cine.salas.all %}
-            <li>{{ sala.numero_sala }} (Capacidad: {{ sala.capacidad }})</li>
+            <li>
+                <a href="{% url 'detalle_sala' sala.id_sala %}">
+                    {{ sala.numero_sala }}
+                </a>
+                (Capacidad: {{ sala.capacidad }})
+            </li>
         {% empty %}
             <li>No hay salas disponibles para este cine.</li>
         {% endfor %}

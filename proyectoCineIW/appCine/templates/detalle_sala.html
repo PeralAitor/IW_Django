@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de la Sala</title>
+</head>
+<body>
+    <h1>Detalle de la Sala</h1>
+    <p><strong>Número de Sala:</strong> {{ sala.numero_sala }}</p>
+    <p><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
+    <p>
+        <strong>Cine:</strong>
+        <a href="{% url 'detalle_cine' sala.cine.id_cine %}">
+                    {{ sala.cine.nombre_cine }}
+        </a>
+    </p>
+    <p><strong>Dirección del Cine:</strong> {{ sala.cine.direccion }}</p>
+    <a href="{% url 'listado_salas' %}">Volver a la lista de salas</a>
+</body>
+</html>
