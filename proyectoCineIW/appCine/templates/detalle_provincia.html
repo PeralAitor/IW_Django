@@ -12,9 +12,9 @@
     <p><strong>Código Postal:</strong> {{ provincia.codigo_postal }}</p>
 
     <h3>Cines en esta provincia:</h3>
-    {% if cines %}
+    {% if provincia.cines.all%}
         <ul>
-            {% for cine in cines %}
+            {% for cine in provincia.cines.all %}
                 <li>
                     <a href="{% url 'detalle_cine' cine.id_cine %}">
                         {{ cine.nombre_cine }}

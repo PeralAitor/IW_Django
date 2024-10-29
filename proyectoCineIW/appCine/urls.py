@@ -14,8 +14,12 @@ urlpatterns = [
     #Url para el detalle de una provincia.
     path('detalle_cine/<int:id_cine>/', views.detalle_cine, name='detalle_cine'),
 
-    #Url para el listado de sals, con su correspondiente vista.
+    #Url para el listado de salas, con su correspondiente vista.
     path('lista_salas/', views.lista_salas, name='lista_salas'),
 
+    #Url para el detalle de una sala.
     path('detalle_sala/<int:id_sala>/', views.detalle_sala, name='detalle_sala'),
+
+    #Url para el listado general.
+    path('', views.index, name='index')
 ]

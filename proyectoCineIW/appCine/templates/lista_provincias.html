@@ -14,7 +14,7 @@
                 <li>
                     <a href="{% url 'detalle_provincia' provincia.id_provincia %}">
                         {{ provincia.nombre_provincia }}
-                    </a> 
+                    </a> <br>
                     (Código postal: {{ provincia.codigo_postal }})
                 </li>
             {% endfor %}
@@ -22,5 +22,7 @@
     {% else %}
         <p>No hay provincias disponibles.</p>
     {% endif %}
+
+    <a href="{% url 'index' %}">Volver a todas las listas.</a><br><br>
 </body>
 </html>

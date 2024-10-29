@@ -11,8 +11,7 @@ def lista_provincias(request):
 
 def detalle_provincia(request, id_provincia):
     provincia = get_object_or_404(Provincia, id_provincia=id_provincia)
-    cines = provincia.cines.all()  # Obtiene todos los cines relacionados con la provincia
-    context = {'provincia': provincia, 'cines': cines}
+    context = {'provincia': provincia}
     return render(request, 'detalle_provincia.html', context)
 
 #Vista de lista de cines.
@@ -37,3 +36,6 @@ def detalle_sala(request, id_sala):
     salas = get_object_or_404(Sala, id_sala=id_sala)
     contexto = {'sala': salas}
     return render(request, 'detalle_sala.html', contexto)
+
+def index(request):
+    return render(request, 'index.html')
