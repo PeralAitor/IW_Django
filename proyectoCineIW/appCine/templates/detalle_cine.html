@@ -9,6 +9,7 @@
     <h1>Detalle de Cine</h1>
 
     <h2>{{ cine.nombre_cine }}</h2>
+    <img src="{{ cine.url_imagen }}" alt="{{ cine.nombre_cine }}" style="width: 300px; height: auto;">
     <p><strong>Dirección:</strong> {{ cine.direccion }}</p>
     <strong>Provincia:</strong> 
     <a href="{% url 'detalle_provincia' cine.provincia.id_provincia %}">{{ cine.provincia.nombre_provincia }}</a>

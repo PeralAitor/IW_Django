@@ -17,6 +17,7 @@ class Cine(models.Model):
     nombre_cine = models.CharField(max_length=100)
     direccion = models.CharField(max_length=150)
     provincia = models.ForeignKey(Provincia, related_name='cines', on_delete=models.CASCADE)
+    url_imagen = models.URLField(max_length=200, default="https://www.cultura.gob.es/.imaging/mte/mcd-theme/contenido-cim-ancho-2c/dam/mcd/cultura/areas/cine/mc/fe/imagenes-recurso/fachada-dore/jcr:content/fachada-dore.jpg")
 
     def __str__(self):
         return self.nombre_cine
@@ -27,6 +28,7 @@ class Sala(models.Model):
     numero_sala = models.CharField(max_length=50)
     capacidad = models.IntegerField()
     cine = models.ForeignKey(Cine, related_name="salas", on_delete=models.CASCADE)
+    url_imagen = models.URLField(max_length=200, default="https://madridfilmoffice.com/wp-content/uploads/2018/10/Teatro-cine-capitol_-4.jpg")
 
     def __str__(self):
         return self.numero_sala + " - " + self.cine.nombre_cine
