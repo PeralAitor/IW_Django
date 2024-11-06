@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Cine</title>
-</head>
-<body>
-    <h1>Detalle de Cine</h1>
+{% extends "base.html" %}
 
+{% block title %}
+    <h1>Detalle de Cine</h1>
+{% endblock %}
+
+{% block content %}
     <h2>{{ cine.nombre_cine }}</h2>
     <img src="{{ cine.url_imagen }}" alt="{{ cine.nombre_cine }}" style="width: 300px; height: auto;">
     <p><strong>Dirección:</strong> {{ cine.direccion }}</p>
@@ -29,5 +26,4 @@
     </ul>
 
     <a href="{% url 'lista_cines' %}">Volver a la lista de cines</a>
-</body>
-</html>
+{% endblock %}
