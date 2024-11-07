@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Cines</title>
-</head>
-<body>
+{% extends "base.html" %} 
+
+    {% block title%}
     <h1>Lista de Cines</h1>
-    
+    {% endblock %}
+
+    {% block content %}
     {% if lista_cines %}
-        <ul>
+        <ul class="listaUl">
             {% for cine in lista_cines %}
                 <li>
                     <a href="{% url 'detalle_cine' cine.id_cine %}">
                         {{ cine.nombre_cine }}
-                    </a> 
-                    Dirección: {{ cine.direccion }}<br>
+                    </a>&nbsp; 
+                    Dirección: {{ cine.direccion }}&nbsp;
                     Provincia: {{ cine.provincia.nombre_provincia }}
                 </li>
             {% endfor %}
@@ -23,10 +20,4 @@
     {% else %}
         <p>No hay provincias disponibles.</p>
     {% endif %}
-
-    <a href="{% url 'lista_provincias' %}">Volver a la lista de provincias.</a><br><br>
-    <a href="{% url 'index' %}">Volver a todas las listas.</a><br>
-</body>
-</html>
-
-
+    {% endblock %}

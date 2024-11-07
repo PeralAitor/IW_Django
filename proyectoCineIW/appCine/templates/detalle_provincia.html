@@ -1,32 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Provincia</title>
-</head>
-<body>
+{% extends "base.html" %}    
+    
+    {% block title %}
     <h1>Detalle de Provincia</h1>
+    {% endblock %}
 
-    <h2>{{ provincia.nombre_provincia }}</h2>
-    <p><strong>Código Postal:</strong> {{ provincia.codigo_postal }}</p>
+{% block content %}
+    <h2 class="h2">{{ provincia.nombre_provincia }}</h2>
+    <p><strong>Código Postal:&nbsp;</strong> {{ provincia.codigo_postal }}</p>
 
     <h3>Cines en esta provincia:</h3>
     {% if provincia.cines.all%}
-        <ul>
+        <ul class="listaUl">
             {% for cine in provincia.cines.all %}
                 <li>
                     <a href="{% url 'detalle_cine' cine.id_cine %}">
                         {{ cine.nombre_cine }}
                     </a>
-                    (Dirección: {{ cine.direccion }})
+                    &nbsp;(Dirección: {{ cine.direccion }})
                 </li>
             {% endfor %}
         </ul>
     {% else %}
         <p>No hay cines disponibles en esta provincia.</p>
     {% endif %}
-
-    <a href="{% url 'lista_provincias' %}">Volver a la lista de provincias</a>
-</body>
-</html>
+{% endblock %}

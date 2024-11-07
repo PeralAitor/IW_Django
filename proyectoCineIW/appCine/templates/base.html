@@ -8,8 +8,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
-    <!--[if lte IE 8]>
-    <script src="{% static 'css/ie/html5shiv.js' %}"></script><![endif]-->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
     <script src="{% static 'js/jquery.scrollgress.min.js' %}"></script>
@@ -19,40 +17,30 @@
     <script src="{% static 'js/skel-layers.min.js' %}"></script>
     <script src="{% static 'js/init.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/skel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/style-xlarge.css' %}"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="{% static 'css/ie/v9.css' %}" /><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="{% static 'css/ie/v8.css' %}" /><![endif]-->
 </head>
 <body>
 
 <!-- Header -->
 <header id="header" class="skel-layers-fixed">
-    <h1><a href="index.html">HTML5 Website <span>by Html5webtemplates.co.uk</span></a></h1>
+    <div id = "titulo">
+        <h1>Cines IEXA</h1>
+        <img id="logo" src="https://th.bing.com/th/id/OIP.v4H1EKqfeqxG4hf1G_t7MQHaFj?rs=1&pid=ImgDetMain" alt="logoCine" height="75px">
+    </div>
+    
     <nav id="nav">
-        {# TODO: Implementar bien la barra de navegacion #}
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'index' %}">Todas las listas</a></li>
             <li>
-                <a href="" class="icon fa-angle-down">Layouts</a>
-                <ul>
-                    <li><a href="#">Left Sidebar</a></li>
-                    <li><a href="#">Right Sidebar</a></li>
-                    <li><a href="#">No Sidebar</a></li>
-                    <li>
-                        <a href="">Submenu</a>
-                        <ul>
-                            <li><a href="#">Option 1</a></li>
-                            <li><a href="#">Option 2</a></li>
-                            <li><a href="#">Option 3</a></li>
-                            <li><a href="#">Option 4</a></li>
-                        </ul>
-                    </li>
+                <a href="" class="icon fa-angle-down">Listas</a>
+                <ul id = "sublista">
+                    <li><a href= "{% url 'lista_provincias' %}">Lista Provincias</a></li>
+                    <li><a href="{% url 'lista_cines' %}">Lista Cines</a></li>
+                    <li><a href="{% url 'lista_salas' %}">Lista Salas</a></li>
                 </ul>
             </li>
-            <li><a href="#">Elements</a></li>
         </ul>
     </nav>
 </header>

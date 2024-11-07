@@ -5,25 +5,24 @@
 {% endblock %}
 
 {% block content %}
-    <h2>{{ cine.nombre_cine }}</h2>
+    <h2 clas="h2">{{ cine.nombre_cine }}</h2>
     <img src="{{ cine.url_imagen }}" alt="{{ cine.nombre_cine }}" style="width: 300px; height: auto;">
-    <p><strong>Dirección:</strong> {{ cine.direccion }}</p>
-    <strong>Provincia:</strong> 
-    <a href="{% url 'detalle_provincia' cine.provincia.id_provincia %}">{{ cine.provincia.nombre_provincia }}</a>
+    <p><strong>Dirección:</strong>&nbsp; {{ cine.direccion }}</p>
+    <strong>Provincia:</strong>&nbsp;  
+    <a href="{% url 'detalle_provincia' cine.provincia.id_provincia %}">{{ cine.provincia.nombre_provincia }}</a><br><br>
+    
 
     <h3>Salas disponibles:</h3>
-    <ul>
+    <ul class="listaUl">
         {% for sala in cine.salas.all %}
             <li>
                 <a href="{% url 'detalle_sala' sala.id_sala %}">
                     {{ sala.numero_sala }}
                 </a>
-                (Capacidad: {{ sala.capacidad }})
+                &nbsp;(Capacidad: {{ sala.capacidad }})
             </li>
         {% empty %}
             <li>No hay salas disponibles para este cine.</li>
         {% endfor %}
     </ul>
-
-    <a href="{% url 'lista_cines' %}">Volver a la lista de cines</a>
 {% endblock %}

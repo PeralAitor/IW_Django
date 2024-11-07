@@ -1,0 +1,45 @@
+h1 {
+    font-size: 180%;
+    align-content: center;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+
+}
+
+#header {
+    font-size: 160%;
+}
+
+
+li {
+    font-size: 70%;
+}
+
+#sublista {
+    font-size: 120%;
+}
+
+#titulo {
+    font-size: 170%;
+    width: 60%;
+    display: inline-block;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.listaUl {
+    font-size: 150%;
+    text-align: left;
+    display: inline-block;
+}
+
+.h2 {
+    font-size: 150%;
+}

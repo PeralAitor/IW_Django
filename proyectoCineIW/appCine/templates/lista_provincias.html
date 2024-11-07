@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Provincias</title>
-</head>
-<body>
+{% extends "base.html" %} 
+
+    {% block title  %}
     <h1>Lista de Provincias</h1>
-    
+    {% endblock %}
+
+    {% block content %}
     {% if lista_provincias %}
-        <ul>
+        <ul class="listaUl">
             {% for provincia in lista_provincias %}
                 <li>
                     <a href="{% url 'detalle_provincia' provincia.id_provincia %}">
                         {{ provincia.nombre_provincia }}
-                    </a> <br>
+                    </a> &nbsp;
                     (Código postal: {{ provincia.codigo_postal }})
                 </li>
             {% endfor %}
@@ -22,7 +19,4 @@
     {% else %}
         <p>No hay provincias disponibles.</p>
     {% endif %}
-
-    <a href="{% url 'index' %}">Volver a todas las listas.</a><br><br>
-</body>
-</html>
+{% endblock %}

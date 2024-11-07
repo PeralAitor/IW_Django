@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Salas</title>
-</head>
-<body>
-<h1>Lista de Salas</h1>
-<ul>
-    {% for sala in lista_salas %}
-        <li>
-            <a href="{% url 'detalle_sala' sala.id_sala %}">
-                {{ sala.numero_sala }} - {{ sala.cine.nombre_cine }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
-<a href="{% url 'lista_cines' %}">Volver a la lista de cines</a><br><br>
-<a href="{% url 'index' %}">Volver a todas las listas.</a><br>
-</body>
-</html>
+{% extends "base.html" %} 
+    {% block title %}
+    <h1>Lista de Salas</h1>
+    {% endblock %}
+
+    {% block content %}
+    <ul class="listaUl">
+        {% for sala in lista_salas %}
+            <li>
+                <a href="{% url 'detalle_sala' sala.id_sala %}">
+                    {{ sala.numero_sala }} - {{ sala.cine.nombre_cine }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
