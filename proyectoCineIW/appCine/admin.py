@@ -1,13 +1,17 @@
 from django.contrib import admin
 from .models import Provincia, Cine, Sala
 
-# Register your models here. (Para poder añadir, eliminar, etc).
+# Personalización del modelo Provincia en el administrador
+@admin.register(Provincia)
+class ProvinciaAdmin(admin.ModelAdmin):
+    list_filter = ('codigo_postal',)  # Filtra por código postal.
 
-#Registro del modelo Provincia.
-admin.site.register(Provincia)
+# Personalización del modelo Cine en el administrador
+@admin.register(Cine)
+class CineAdmin(admin.ModelAdmin):
+    list_filter = ('provincia',)  # Filtra por provincia.
 
-#Registro del modelo Cine.
-admin.site.register(Cine)
-
-#Registro del modelo Sala.
-admin.site.register(Sala)
+# Personalización del modelo Sala en el administrador
+@admin.register(Sala)
+class SalaAdmin(admin.ModelAdmin):
+    list_filter = ('cine',)  # Filtra por cine.
