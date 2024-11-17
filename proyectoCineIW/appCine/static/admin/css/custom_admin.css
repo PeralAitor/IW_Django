@@ -1,0 +1,192 @@
+/* Fondo del cuerpo y del panel */
+body {
+    background-color: #1e1e2e; /* Fondo oscuro de Mocha */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #cdd6f4; /* Texto claro para mejor legibilidad */
+    line-height: 1.6;
+}
+
+/* Encabezado del panel de administración */
+#header {
+    background-color: #f38ba8; /* Rojo Mocha */
+    border-bottom: 3px solid #f9e2af; /* Amarillo Mocha */
+    padding: 15px;
+}
+
+/* Títulos en el encabezado */
+#header h1 a {
+    color: #1e1e2e; /* Fondo oscuro */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* Fondo y borde de los módulos */
+.module {
+    background-color: #1e1e2e; /* Fondo oscuro de Mocha */
+    border: 2px solid #a6e3a1; /* Verde Mocha */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #89b4fa; /* Azul Mocha */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+a:hover {
+    color: #cba6f7; /* Mauve Mocha en hover */
+    text-decoration: underline;
+}
+
+/* Botones de formulario */
+input[type="submit"], button {
+    background-color: #a6e3a1; /* Verde Mocha */
+    color: #1e1e2e;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #cba6f7; /* Mauve Mocha al hacer hover */
+}
+
+/* Estilo de los campos de formulario */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    border: 2px solid #cba6f7; /* Mauve Mocha */
+    border-radius: 4px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #302d41; /* Fondo oscuro para formularios */
+    font-size: 16px;
+    color: #cdd6f4;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus, textarea:focus {
+    border-color: #89b4fa; /* Azul Mocha para el borde en foco */
+    outline: none;
+}
+
+/* Tablas de la administración */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #302d41; /* Fondo oscuro de Mocha */
+}
+
+th {
+    background-color: #45475a; /* Gris oscuro para los encabezados de las tablas */
+    color: #cdd6f4;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+td {
+    border-bottom: 1px solid #585b70; /* Gris medio para los bordes de las celdas */
+    padding: 20px;
+    font-size: 16px;
+    color: #cdd6f4;
+}
+
+/* Mensajes (error, éxito, información) */
+.success {
+    background-color: #a6e3a1; /* Verde Mocha */
+    color: #1e1e2e;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.error {
+    background-color: #f38ba8; /* Rojo Mocha */
+    color: #1e1e2e;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.info {
+    background-color: #f9e2af; /* Amarillo Mocha */
+    color: #1e1e2e;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Pie de página */
+#footer {
+    background-color: #1e1e2e; /* Fondo oscuro de Mocha */
+    padding: 15px;
+    text-align: center;
+    color: #cdd6f4;
+    border-top: 3px solid #cba6f7; /* Borde Mauve Mocha */
+    font-size: 15px;
+}
+
+/* Navegación lateral */
+.nav-sidebar li a {
+    background-color: #302d41; /* Fondo oscuro para cada enlace del menú */
+    color: #89b4fa; /* Azul Mocha */
+    padding: 15px;
+    display: block;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.nav-sidebar li a:hover {
+    background-color: #f38ba8; /* Fondo rojo Mocha al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+
+/* Etiquetas (labels) de los campos de formulario */
+label {
+    color: #cdd6f4;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pagination li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.pagination li a {
+    color: #cdd6f4; /* Texto claro para enlaces de paginación */
+    background-color: #45475a; /* Fondo gris oscuro */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #f38ba8;
+    color: #ffffff;
+}
