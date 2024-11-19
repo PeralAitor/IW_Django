@@ -1,7 +1,7 @@
 const TMDB_API_KEY = "da013d498d9fcebb1ec15df2da129511";
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 
-async function fetchNowPlayingMoviesSpain() {
+async function fetchNowPlayingMovies() {
     const url = `${TMDB_BASE_URL}/movie/now_playing?api_key=${TMDB_API_KEY}&language=es-ES&region=ES&page=1`;
 
     try {
