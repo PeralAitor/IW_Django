@@ -16,6 +16,7 @@
     <script src="{% static 'js/skel.min.js' %}"></script>
     <script src="{% static 'js/skel-layers.min.js' %}"></script>
     <script src="{% static 'js/init.js' %}"></script>
+    <script src="{% static 'js/getPeliculasEnCartelera.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/skel.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
@@ -58,6 +59,12 @@
             {% block content %}
             {% endblock %}
         </section>
+
+    <!-- Peliculas -->
+    <section>
+        <button onclick="fetchNowPlayingMoviesSpain()">Ver Peliculas en Cartelera</button>
+        <div id="movieResults"></div>
+    </section>
 
     </div>
 </section>
